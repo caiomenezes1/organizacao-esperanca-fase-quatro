@@ -213,7 +213,8 @@ input, select, textarea {
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--cor-secundaria);
-  outline: none;
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
 }
 
 /* =========================
@@ -253,9 +254,12 @@ figure.cadastro-img img { max-width: 450px; }
 
 .toast {
   position: fixed;
-  bottom: var(--space-md);
+  top: var(--space-md);
   right: var(--space-md);
-  background: var(--cor-neutra-escura);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--cor-accent);
   color: #fff;
   padding: var(--space-sm) var(--space-md);
   border-radius: 6px;
@@ -299,6 +303,14 @@ figure.cadastro-img img { max-width: 450px; }
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+/* =========================
+   FOCO VISÍVEL PARA NAVEGAÇÃO POR TECLADO
+========================= */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
 }
 
 /* =========================
