@@ -47,7 +47,7 @@ body {
 h1 { font-size: var(--fs-xxl); margin: 0 0 var(--space-sm) 0; }
 h2 { font-size: var(--fs-xl); margin: 0 0 var(--space-sm) 0; }
 h3 { font-size: var(--fs-lg); margin: 0 0 var(--space-sm) 0; }
-.lead { font-size: var(--fs-md); font-weight: bold; color: #222; }
+.lead { font-size: var(--fs-md); font-weight: bold; color: #444; }
 
 a { color: var(--cor-secundaria); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -213,8 +213,7 @@ input, select, textarea {
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--cor-secundaria);
-  outline: 3px solid var(--cor-secundaria);
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* =========================
@@ -223,7 +222,7 @@ input:focus, textarea:focus, select:focus {
 figure { margin: var(--space-md) 0; }
 figure img { width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; }
 figure.index-img img { max-width: 550px; }
-figure.projeto-img img { max-width: 100%; }
+figure.projeto-img img { max-width: 100%; } 
 figure.cadastro-img img { max-width: 450px; }
 
 /* =========================
@@ -254,12 +253,9 @@ figure.cadastro-img img { max-width: 450px; }
 
 .toast {
   position: fixed;
-  top: var(--space-md);
+  bottom: var(--space-md);
   right: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: var(--cor-accent);
+  background: var(--cor-neutra-escura);
   color: #fff;
   padding: var(--space-sm) var(--space-md);
   border-radius: 6px;
@@ -314,45 +310,33 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 
 /* =========================
-   ALTO CONTRASTE E MODO ESCURO
-========================= */
-body.high-contrast, body.dark-mode {
-  background-color: #111 !important;
-  color: #eee !important;
-}
-
-body.high-contrast a, body.dark-mode a {
-  color: #0ff !important;
-}
-
-body.high-contrast button, body.dark-mode button {
-  background-color: #0f0 !important;
-  color: #000 !important;
-}
-
-body.high-contrast .site-header, body.dark-mode .site-header {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-body.high-contrast .site-footer, body.dark-mode .site-footer {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-body.high-contrast .card, body.dark-mode .card,
-body.high-contrast article, body.dark-mode article {
-  background-color: #222 !important;
-  color: #fff !important;
-}
-
-body.high-contrast .badge, body.dark-mode .badge {
-  background-color: #ff0 !important;
-  color: #000 !important;
-}
-
-/* =========================
    OUTROS
 ========================= */
-/* Espaçamento entre seções */
 section + section { margin-top: var(--space-lg); }
+
+/* =========================
+   MODO ESCURO / ALTO CONTRASTE
+========================= */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212; /* fundo escuro global */
+    color: var(--cor-neutra-clara); /* texto claro padrão */
+  }
+
+  main.container, article {
+    background-color: #1e1e1e; /* containers escuros */
+  }
+
+  a { color: var(--cor-secundaria); }
+
+  .site-footer {
+    background-color: #222;
+    color: #fff;
+  }
+
+  /* Mantém o cabeçalho original */
+  .site-header {
+    background: var(--cor-primaria);
+    color: #fff;
+  }
+}
