@@ -22,12 +22,14 @@
       padding: var(--space-md);
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      color: #222; /* Texto com contraste suficiente */
     }
 
-    header h2, header p.lead {
+    header h1, header p.lead {
       font-family: 'Helvetica', sans-serif;
       font-size: var(--fs-xl);
       margin-bottom: var(--space-sm);
+      color: #222; /* Contraste adequado */
     }
 
     p.lead { font-size: var(--fs-md); font-weight: bold; }
@@ -44,10 +46,20 @@
 
     figcaption {
       font-size: var(--fs-sm);
-      color: #666;
+      color: #444; /* Contraste suficiente com o fundo branco */
     }
 
-    /* Adicionando foco visível para navegação por teclado */
+    nav a {
+      color: #222; /* Links com contraste suficiente */
+      text-decoration: underline;
+    }
+
+    nav a:focus {
+      outline: 3px solid #18bc9c;
+      outline-offset: 2px;
+    }
+
+    /* Foco visível para navegação por teclado */
     a:focus, button:focus, input:focus, select:focus, textarea:focus {
       outline: 3px solid #18bc9c;
       outline-offset: 2px;
@@ -59,12 +71,19 @@
   <main class="container">
     <article>
       <header>
-        <h2>Bem-vindo à Organização Esperança</h2>
+        <h1>Bem-vindo à Organização Esperança</h1>
         <p class="lead">Conheça nossas iniciativas sociais e veja como você pode ajudar a transformar vidas.</p>
       </header>
 
-      <section aria-labelledby="sec-voluntariado">
-        <h3 id="sec-voluntariado">Voluntariado</h3>
+      <nav aria-label="Seções principais">
+        <ul>
+          <li><a href="#sec-voluntariado">Voluntariado</a></li>
+          <li><a href="#sec-doacoes">Como Doar</a></li>
+        </ul>
+      </nav>
+
+      <section id="sec-voluntariado" aria-labelledby="sec-voluntariado-title">
+        <h2 id="sec-voluntariado-title">Voluntariado</h2>
         <p>Participe como voluntário! Seja mentor educacional, apoio logístico ou promotor de eventos sociais.</p>
         <figure class="projeto-img">
           <img src="img/projeto-brasil.png" alt="Voluntários ensinando crianças" />
@@ -75,8 +94,8 @@
         </figure>
       </section>
 
-      <section aria-labelledby="sec-doacoes">
-        <h3 id="sec-doacoes">Como Doar</h3>
+      <section id="sec-doacoes" aria-labelledby="sec-doacoes-title">
+        <h2 id="sec-doacoes-title">Como Doar</h2>
         <p>Você pode apoiar nossos projetos com doações financeiras, materiais escolares ou alimentos não perecíveis.</p>
         <ul>
           <li>Pix: <strong>doe@organizacaoesperanca.org</strong></li>
