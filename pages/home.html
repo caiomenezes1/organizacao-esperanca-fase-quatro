@@ -22,7 +22,7 @@
       padding: var(--space-md);
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      color: #222; /* Texto com contraste suficiente */
+      color: #222; /* Contraste adequado */
     }
 
     header h1, header p.lead {
@@ -46,7 +46,7 @@
 
     figcaption {
       font-size: var(--fs-sm);
-      color: #444; /* Contraste suficiente com o fundo branco */
+      color: #444; /* Contraste suficiente com fundo branco */
     }
 
     nav a {
@@ -70,19 +70,19 @@
 
   <main class="container">
     <article>
-      <header>
+      <header role="banner">
         <h1>Bem-vindo à Organização Esperança</h1>
         <p class="lead">Conheça nossas iniciativas sociais e veja como você pode ajudar a transformar vidas.</p>
       </header>
 
-      <nav aria-label="Seções principais">
+      <nav role="navigation" aria-label="Seções principais">
         <ul>
           <li><a href="#sec-voluntariado">Voluntariado</a></li>
           <li><a href="#sec-doacoes">Como Doar</a></li>
         </ul>
       </nav>
 
-      <section id="sec-voluntariado" aria-labelledby="sec-voluntariado-title">
+      <section id="sec-voluntariado" role="region" aria-labelledby="sec-voluntariado-title">
         <h2 id="sec-voluntariado-title">Voluntariado</h2>
         <p>Participe como voluntário! Seja mentor educacional, apoio logístico ou promotor de eventos sociais.</p>
         <figure class="projeto-img">
@@ -94,7 +94,7 @@
         </figure>
       </section>
 
-      <section id="sec-doacoes" aria-labelledby="sec-doacoes-title">
+      <section id="sec-doacoes" role="region" aria-labelledby="sec-doacoes-title">
         <h2 id="sec-doacoes-title">Como Doar</h2>
         <p>Você pode apoiar nossos projetos com doações financeiras, materiais escolares ou alimentos não perecíveis.</p>
         <ul>
@@ -112,7 +112,9 @@
     </article>
   </main>
 
-  <footer class="site-footer"></footer>
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 Organização Esperança. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
