@@ -47,7 +47,7 @@ body {
 h1 { font-size: var(--fs-xxl); margin: 0 0 var(--space-sm) 0; }
 h2 { font-size: var(--fs-xl); margin: 0 0 var(--space-sm) 0; }
 h3 { font-size: var(--fs-lg); margin: 0 0 var(--space-sm) 0; }
-.lead { font-size: var(--fs-md); font-weight: bold; color: #444; }
+.lead { font-size: var(--fs-md); font-weight: bold; color: #222; }
 
 a { color: var(--cor-secundaria); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -223,7 +223,7 @@ input:focus, textarea:focus, select:focus {
 figure { margin: var(--space-md) 0; }
 figure img { width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; }
 figure.index-img img { max-width: 550px; }
-figure.projeto-img img { max-width: 100%; } /* ajustado para ocupar todo o espaço do artigo */
+figure.projeto-img img { max-width: 100%; }
 figure.cadastro-img img { max-width: 450px; }
 
 /* =========================
@@ -311,6 +311,44 @@ figure.cadastro-img img { max-width: 450px; }
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
   outline: 3px solid var(--cor-secundaria);
   outline-offset: 2px;
+}
+
+/* =========================
+   ALTO CONTRASTE E MODO ESCURO
+========================= */
+body.high-contrast, body.dark-mode {
+  background-color: #111 !important;
+  color: #eee !important;
+}
+
+body.high-contrast a, body.dark-mode a {
+  color: #0ff !important;
+}
+
+body.high-contrast button, body.dark-mode button {
+  background-color: #0f0 !important;
+  color: #000 !important;
+}
+
+body.high-contrast .site-header, body.dark-mode .site-header {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast .site-footer, body.dark-mode .site-footer {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast .card, body.dark-mode .card,
+body.high-contrast article, body.dark-mode article {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+body.high-contrast .badge, body.dark-mode .badge {
+  background-color: #ff0 !important;
+  color: #000 !important;
 }
 
 /* =========================
