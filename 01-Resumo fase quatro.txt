@@ -1,0 +1,22 @@
+1.
+Acessibilidade (WCAG 2.1 Nível AA)
+
+Implementar navegação por teclado em todos os componentes. feito
+
+Criar estrutura semântica adequada. feito
+
+Garantir contraste mínimo de 4.5:1 para texto normal. feito
+
+Implementar suporte completo para leitores de tela. feito
+
+Criar versão de alto contraste e modo escuro acessível. (Foi adicionado o tema escuro mas ele ficou fixo e não está dinâmico, precisa ser ajustado para que ele identifique o tema quye o usuário está usando e aplique o tema correto na pagina provável ajuste no css e javascript)
+
+
+
+2.
+
+Otimização para Produção
+
+Implementar minificação de CSS, JavaScript e HTML.
+
+Configurar compressão de imagens.
